@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire HTML</title>
+</head>
+<body>
+    <h1>Formulaire HTML</h1>
+
+        <form action="" method="POST"> <!-- formulaire -->
+            <div>
+                <label for="name">Nom :</label>
+                <!-- l'attribut value permet de saisir une valeur qui s'affichera par défaut -->
+                <input type="text" id="name" name="user_name" value="par défaut">
+            </div>
+            <div>
+                <label for="mail">Mail :</label>
+                <input type="email" id="email" name="user_mail">
+            </div>
+            <div>
+                <label for="msg">Message :</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </div>
+           <div class="button">
+                <button type="submit">Envoyer message</button>
+           </div>
+           <div class="button_reset">
+               <button type="reset">par défault</button>
+           </div>
+
+
+
+
+        </form> <!-- fin formulaire -->
+        
+        <!-- L'attribut action définit l'emplacement (une URL) où doivent être envoyées les données collectées par le formulaire. -->
+
+        <!-- L'attribut method définit la méthode HTTP utilisée pour envoyer les données (« get » ou « post »). -->
+
+        <!-- Dans l'élément input le plus important est l'attribut type, qui définit le comportement de l'élément input -->
+
+        <!-- l'attribut for de <label> et l'id de <input> doivent être identique -->
+</body>
+</html>

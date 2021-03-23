@@ -102,6 +102,7 @@
                 echo "<p class=\"alert alert-success w-75 mx-auto text-center\">";
 
               if ($d == 8) {
+                ..
                 echo "Réponse 1 : \$d est égal à 8";
               } else if ($d != 10) {
                 echo "Réponse 2 : \$d est différent de 10";

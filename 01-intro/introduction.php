@@ -19,7 +19,7 @@
 
     
 
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">COURS PHP 7 - Introduction</h1>
             <p class="lead">PHP signifie aujourd'hui php Hypertext Preprocessor.</p>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="col-sm-12 col-md-4">
-                    <p>Pour contenir la masse d'informations collectées, PHP s'appuie généralement sur une base de données, généralement MySQL mais aussi SQLite, et sur desserveurs Apache. PHP, MySQL et Apache forment d'ailleurs le trioultradominant sur les serveurs Internet. Quand ce trio est associé sur unserveur à Linux, on parle de système LAMP (Linux, Apache, MySQL, PHP).PHP est utilisé aujourd'hui par plus des trois quarts des sites dynamiques dela planète et par les trois quarts des grandes entreprises françaises. Pour unserveur Windows, on parle de système WAMP, mais ceci est beaucoup moins courant.</p>
+                    <p>Pour contenir la masse d'informations collectées, PHP s'appuie généralement sur une base de données, généralement MySQL mais aussi SQLite, et sur des serveurs Apache. PHP, MySQL et Apache forment d'ailleurs le trio ultradominant sur les serveurs Internet. Quand ce trio est associé sur unserveur à Linux, on parle de système LAMP (Linux, Apache, MySQL, PHP).PHP est utilisé aujourd'hui par plus des trois quarts des sites dynamiques de la planète et par les trois quarts des grandes entreprises françaises. Pour un serveur Windows, on parle de système WAMP, mais ceci est beaucoup moins courant.</p>
                 </div>
             </div>
 
@@ -63,6 +63,7 @@
                     </code>
                     </blockquote>
                 </div> <!-- fin col -->
+
                 
                 <div class="col-sm-12 col-md-8">
                     <?php

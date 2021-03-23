@@ -13,31 +13,29 @@
   <body>
 
 <!-- navigation en include -->
-<?php require '../inc/nav.php';?>
+<?php require '../inc/nav.php'; ?>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+    <div class="jumbotron">
             <h1 class="display-4">1- les chaînes de caractères</h1>
-            <p class="lead">Les chaînes de caractères sont avec les nombres les types de données les plus manipulés sur un site web. De surcroît, dans les échanges entre le client et le serveur au moyen de formulaires, toutes les données sont transmises sous forme de chaînes, d'où leur importance.</p>
-            
-        </div>
-    </div> <!-- fin juMbotron -->
+            <p class="lead">Les chaînes de caractères sont avec les nombres les types de données les plus manipulés sur un site web. De surcroît, dans les échanges entre le client et le serveur au moyen de formulaires, toutes les données sont transmises sous forme de chaînes, d'où leur importance.</p>          
+    </div> <!-- fin jumbotron -->
     
     <!-- contenu principal -->
     <main class="container-fluid bg-white">
         <div class="row">
             <div class="col-sm-12">
-         <p>Les chaînes de caractères est une suite de caractères alphanumériques contenus entre des guillemets simples (apostrophes) ou doubles.</p>
-         p>Si une chaîne contient une variable, celle-ci est évaluée, et sa valeur incorporée à la chaîne uniquement si vous utilisez des guillemets et nin des apostrophes</p>
+                <p>Les chaînes de caractères est une suite de caractères alphanumériques contenus entre des guillemets simples (apostrophes) ou doubles.</p>
+                Si une chaîne contient une variable, celle-ci est évaluée, et sa valeur incorporée à la chaîne uniquement si vous utilisez des guillemets et nin des apostrophes.</p>
             </div>
 
-            <table class="table table-striped">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                            <th scope="col">Séquence</th>
-                            <th scope="col">Signification</th>
+                                <th scope="col">Séquence</th>
+                                <th scope="col">Signification</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <tr>
                                 <th scope="row">\'</th>
@@ -78,9 +76,8 @@
                                 <td>Séquence de caractères désignant un nombre hexadécimal (de 1 à 2 caractères 0 à 9 et A à F ou a à f) et affichant le caractère correspondant :<br>
                                 echo "\x4D\x79\x53\x51\x4C"; // Affiche MySQL</td>
                             </tr>
-                                </tbody>
-                                </table>
-        </div>
+                            </tbody>
+                    </table>
 
         <div class="col-sm-12">
             <h2>Concaténer des chaînes de caractères</h2>
@@ -98,7 +95,6 @@
 
                 ?>
             </p>
-
         </div>
     </main> 
 
