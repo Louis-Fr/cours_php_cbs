@@ -1,6 +1,38 @@
 <?php require_once '../inc/functions.php'; ?> 
 <?php require_once '../inc/db_config_DIA.php'; ?> 
 <?php require_once '../inc/db_connexion_DIA.php'; ?> 
+<?php
+    // Traitement du formulaire & insertion dans la BDD
+    // Exemple de formulaire pas protégé contre les injections SQL !
+    // ok');DELETE FROM commentaire;( - cette phrase peut supprimer toutes les données de la table
+
+    // si $_POST n'est pas vide
+    // if (!empty( $_POST)) { 
+    //     $resultat = $pdoDIA->query("INSERT INTO commentaire (pseudo, date_enregistrement, message) VALUES ('$_POST[pseudo]', NOW(), '$_POST[message]') ");
+    //     // L'ordre est important pour un injection SQL, des indices mélangé facilite l'injection SQL
+    //     // NOW() renvoie la date d'aujourd'hui. 
+    // }
+
+    if (!empty( $_POST)) { 
+        // Pour se protéger des failles :
+        // 
+        $_POST['pseudo'] = htmlspecialchars($_POST['pseudo']);
+        $_POST['message'] = htmlspecialchars($_POST['message']);
+
+        // 1->prepare
+        // 2->execute
+        $resultat = $pdoDIA->prepare(" INSERT INTO commentaire (pseudo, date_enregistrement, message) VALUES (:pseudo, NOW(), :message)"); 
+
+        $resultat->execute(array(
+            ':pseudo' => $_POST['pseudo'],
+            ':message' => $_POST['message'],
+            ));
+
+    } // fin du if empty
+    
+    // Le fait de mettre des marqueurs dans la requête permet de ne pas concaténer les instructions SQL d'origine et celles qui seraient injectées. Ainsi elle ne peuvent pas s'éxecuter successivement. De plus en liant les marqueurs à leur valeur dans execute(), PDO les neutralise automatiquement et les transforment en chaînes de carcatères inoffensifs.
+
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -13,9 +45,8 @@
     </head>
         <body>
             <!-- navigation en include  -->
-    <?php
-        require '../inc/nav.php';
-    ?>
+    <?php require '../inc/nav.php';?>
+
             <!-- Début jumbotron -->
             <div class="jumbotron container">
                 <h1 class="display-4">COURS PHP 7 - Sécurité</h1>
@@ -37,6 +68,30 @@
                             <li>date_enregistrement : DATETIME</li>
                         </ul>
                     </div> <!--fin col-->
+
+                    <div class="col-sm-12">
+                        <!-- action reste vide si nous insérons des données avec cette même page et POST va envoyer les infos du form dans la superglobale $_POST -->
+                        <form action="" method="POST"> <!-- début formulaire -->
+                            <div>
+                                <label for="pseudo">Pseudo</label>
+                                <input type="text" id="pseudo" name="pseudo">
+                            </div>
+
+                            <div>
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                            </div>
+
+                            <div>
+                                <button type="submit">Envoyer</button>
+                            </div>
+
+                            <div>
+                                <button type="reset">Renitialiser</button>
+                            </div>
+                        </form> <!-- fin formulaire -->
+                    </div>
+
                     <div class="col-sm-12 p-4">
                         <h3>2 - Création d'un tableau php pour afficher tous les commentaires</h3>
                     <?php 

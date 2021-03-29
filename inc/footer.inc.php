@@ -1,7 +1,7 @@
 <footer class="footer mt-auto py-3">
   <div class="container">
-    <span class="text-muted">Cours PHP 7 - 
     
+    <span class="text-muted">Cours PHP 7 - 
     <?php // ouverture passage PHP
     setlocale(LC_ALL, 'fr_FR');
     echo strftime("%A %e %B %Y"); 

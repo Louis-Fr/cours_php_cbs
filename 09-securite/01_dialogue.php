@@ -73,8 +73,9 @@
                 <div class="col-sm-12 col-md-6 p-4">
                 <!-- Exo compter les commentaires et affichage des commentaires avec query et boucle while dans un tableau HTML -->
                 <?php
-                    $requete = $pdoDIA->query (" SELECT * FROM commentaire");
+                    $requete = $pdoDIA->query ("SELECT * FROM commentaire");
                     $nbr_commentaire = $requete->rowCount();
+                    // Pas nécessaire de mettre le résultat dans une new variable
                     echo "<p>il y a " .$nbr_commentaire. " commentaires.</p>";
 
 
@@ -95,6 +96,9 @@
                     } 
                     echo "</table>";
 
+                    // correction Patrick
+                    
+
 
 
                     // Modifier des informations déjà existante dans la BDD, içi rajout d'informatation à l'identifiant commentaire 12 qui était vide
@@ -104,8 +108,50 @@
                 ?>
                         
                 </div> <!-- fin col -->
+
+                <div class="col-sm-12">
+                <h3>Correction Patrick</h3>
+
+            <!-- Affichage des commentaires avec query et boucle while et compter les enregistrements de la table
+            $resultat = $pdoDIAG->query( " SELECT * FROM commentaire " );
+            jeprint_r($resultat->rowCount());
+            $nbr_commentaires = $resultat->rowCount();// je compte les résultats et je passe le total dans une nouvelle variable -->
+          
+            <h5><?php echo "<p> Il y a " .$nbr_commentaire. "commentaires";// je compte les résultats  commentaires?></h5>
+                    <table class="table table-stripped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Pseudo</th>
+                                <th>Message</th>
+                                <th>Date enregistrement</th>
+                            </tr>
+                        </thead>
+
+                        <?php
+                        
+                            while ($nbr_commentaire = $requete->fetch(PDO::FETCH_ASSOC)) { ?>
+                                <tr>
+                                   <td><?php echo $requete['id_commentaire'];?></td>
+                                   <td><?php echo $requete['pseudo'];?></td>
+                                   <td><?php echo $requete['message'];?></td>
+                                   <td><?php echo $requete['date_enregistrement'];?></td>
+                                </tr>
+
+                                <?php } ?>
+                            
+
+
+
+                       
+                    
+                    
+                    </table>
+                
+                </div>
             </div> <!-- fin row -->
 
+                    
 
     
     </main> <!-- fin main-->

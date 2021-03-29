@@ -1,8 +1,5 @@
-
-<?php
-  include '../inc/functions.php';
-?>
-
+<?php include '../inc/functions.php'; ?>
+ 
 <!doctype html>
 <html lang="fr">
   <head>
@@ -44,40 +41,46 @@
           $tableau2 = array ('index1' => 'test', 'index2' => 'test2');
             foreach ($tableau2 as $index2 => $value) {
                 echo '<p>' .$value. '</p>' ;
+                // print_r($tableau2); 
               }
-          // echo $tableau1; erreur de type "array to string conversion" on ne peut afficher directement un tableau
+          // echo $tableau1; erreur de type "array to string conversion" on ne peut pas afficher directement un tableau, on doit faire un prin_r, var_dump ou une boucle foreach ou while
 
           echo "<pre>"; //pour mieux afficher et mieux lire
-          var_dump($tableau1); //var_dump affiche le contenu du tableau et les types de données et les valeurs
+          var_dump($tableau1); //var_dump affiche le contenu du tableau avec les types de données et les valeurs
           echo "</pre>";
 
           echo "<pre>";
-          print_r($tableau1); //print_r affiche les valeurs sans les types
+          print_r($tableau1); //print_r affiche les valeurs sans les types de données
           echo "</pre>";
 
           // autre facon de déclarer un array
 
           $tableau2 = ['France', 'Espagne', 'Italie', 'Portugal'];
 
-          $tableau2[] = 'Roumanie'; // rajouter un élément dans notre tableau avec des crochets
+          $tableau2[] = 'Roumanie'; // ajout d'un élément dans notre tableau avec des crochets
           print_r($tableau2);
+          echo "<br>";
 
+          echo "Fonction date du jour";
           dateJourFr2();
+          echo "<br>";
+
+          echo "<strong>var_dump()</strong>";
           jevardump($tableau2);
+          echo "<hr>";
+
+          echo "<strong>print_r()</strong>";
           jeprintr($tableau2);
-
-
          
-          ?>
+          ?> <!-- FIN PASSAGE PHP -->
         </div>
       </div>
 
 
-
-        <div class="row">
+      <div class="row">
             <div class="col-sm-12">
                 <h2>1- Les tableaux</h2>
-                <p>Un tableau appelé array en anglais est une variable améliorée dans laquelle on stocke une multitude de valeurs. Ces valeurs peuvent être de n'importe quel type. Elle possedent un indice dont la numérotation commence à 0.<p>
+                <p>Un tableau, appelé array en anglais est une variable améliorée dans laquelle on stocke une multitude de valeurs. Ces valeurs peuvent être de n'importe quel type. Elle possedent un indice dont l'index commence à 0.<p>
 
                 <blockquote>
 
@@ -88,10 +91,11 @@
                     $tab[0] = 2004; 
                     $tab[1] = 31.147;
                     $tab[2] = "PHP 7";
-                    $tab[35] = $tab[2]. "et MySQL"; // avec concaténation - les éléments indicés entre 2 et 35 n'existent pas
-                    $tab[] = "coucou"; // il mettra l'indice 36 : avantage ajouter un élément à la fin d'un tableau sans connaître la valeur du premier indice disponible
-
-                    echo "Nombre d'éléments du tableau : ". count($tab); // Ils ne sont donc pas compté
+                    $tab[35] = $tab[2]. "et MySQL"; // on concaténe avec le contenu de l'index [2] - les éléments indicés entre 2 et 35 n'existent pas
+                    $tab[] = "coucou"; // il mettra l'indice 36 : avantage d'ajouter un élément à la fin d'un tableau sans connaître la valeur du premier indice
+                    var_dump($tab);
+                    echo "<hr>";
+                    echo "Nombre d'éléments du tableau : " .count($tab); // Ils ne sont donc pas compté
                     echo "<hr><p>Le langage préfére de l'open source est $tab[2] <br>";
                     echo "Utilisez $tab[35]</p>";
                     
@@ -102,8 +106,8 @@
 
                 <div class="col-sm-12">
                   <h2>Les tableaux associatifs</h2>
-                    <p>Dans un tableau associatif nous pouvons choisir le nom des indices ou des index, c'est à dire que nous associons un index aux valeurs</p>
-                    <!-- TABLEAU ou on indique les indices et les valeurs
+                    <p>Dans un tableau associatif nous pouvons choisir le nom des index, c'est à dire que nous associons un indice aux valeurs</p>
+                    <!-- On indique les indices et les valeurs
                     avec le couple indice => valeur -->
                      
 
@@ -114,13 +118,12 @@
                       'bl' => 'blanc',
                       'r' => 'rose',
                     );
+                    jevardump($couleurs);
 
                     $tableau = array ('valeur1', 'valeur2');
                     jevardump($tableau);
-
-                    jevardump($couleurs);
-                    // pour afficher une valeur de notre tableau associatif en le cherchant par son  
-                    echo '<p>La première couleur du tableau est le ' .$couleurs['b']. '</p>'; // quand un tableau associatif est dans des quotes il prend des quotes autour de son indice
+                    // pour afficher une valeur de notre tableau associatif en le cherchant par son indice
+                    echo '<p>La première couleur du tableau est le ' .$couleurs['b']. '</p>'; // quand un tableau associatif est dans des simples quotes il prend des quotes autour de son indice
 
                     echo "<p> La première couleur du tableau est $couleurs[b]</p>"; // dans des guillemets il y a une exception, l'indice ne prends plus de quotes ... VOIR
 
@@ -135,9 +138,6 @@
                     // on parcours le tableau $tableau1 par ses valeurs, la variable $acteur prend les valeurs successivement à chaque tour de boucle, le mot-clef "as" est obligatoire
 
                     foreach ($couleurs as $acteurs) { // récupère indice et valeur
-                      // echo "<li>";
-                      // echo $acteurs;
-                      // echo "</li>"; 
                       echo "<li>$acteurs</li>";
                     }  
                       echo "</ul>";
@@ -244,7 +244,7 @@
 
             <div class="col-sm-12">
               <h2>Les tableaux multi-dimensionnels</h2>
-              <p>Un tableau multi-dimensuinnel est un tableau qui contiendra une suite de tableau.</p>
+              <p>Un tableau multi-dimensionnel est un tableau qui contiendra une suite de tableau.</p>
 
                 <?php
                   $tableau_multi = array (
@@ -269,13 +269,12 @@
                       // pour afficher Jean
                       // echo "jean";
                       echo $tableau_multi[0]['prenom']; // pour afficher Jean on entre l'indice 0 puis dans le sous tableau on selectionne l'indice.
-                      
-                      // pour parcourir le tableau multi-dimensionnel on peut faire une boucle for ca ses indices sont numériques
 
                       // pour parcourir le tableau multi-dimensionnel on peut faire une boucle for car ses indices sont numériques
                       echo "<ul>";
-                      for ($i=0; $i < count[$tableau_multi] ; $i++)  { 
-                        echo "<li>" .$tableau_multi[$i]['nom'] .$tableau_multi[$i]['prenom']."</li>";
+                      for ($i=0; $i < count($tableau_multi); $i++)  { 
+                        echo "<li>" .$tableau_multi[$i]['nom']."</li>";
+                        echo  "<li>" .$tableau_multi[$i]['prenom']."</li>";
                       }
                       echo "</ul>";
 
@@ -284,9 +283,9 @@
                       foreach ($tableau_multi as $indice => $prenom) {
                         echo $tableau_multi[$indice]['prenom'];
                       }
+                      echo "</p>";
 
-
-                      echo "<p>";
+                     
                       foreach ($tableau_multi as $indice => $prenom) {
                         echo $tableau_multi[$indice]['prenom'];
                       }

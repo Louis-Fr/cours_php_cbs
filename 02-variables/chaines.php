@@ -24,8 +24,8 @@
     <main class="container-fluid bg-white">
         <div class="row">
             <div class="col-sm-12">
-                <p>Les chaînes de caractères est une suite de caractères alphanumériques contenus entre des guillemets simples (apostrophes) ou doubles.</p>
-                Si une chaîne contient une variable, celle-ci est évaluée, et sa valeur incorporée à la chaîne uniquement si vous utilisez des guillemets et nin des apostrophes.</p>
+                <p>Les chaînes de caractères sont une suite de caractères alphanumériques contenus entre des guillemets simples (apostrophes) ou doubles.</p>
+                Si une chaîne contient une variable, celle-ci est évaluée, et sa valeur incorporée à la chaîne uniquement si vous utilisez des guillemets et non des apostrophes.</p>
             </div>
 
                     <table class="table table-striped">

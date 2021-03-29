@@ -1,7 +1,6 @@
 <?php
     require '../inc/db_config.php';
     require '../inc/db_connexion.php';
-
 ?>
 
 

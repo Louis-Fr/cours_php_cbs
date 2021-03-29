@@ -1,16 +1,4 @@
-// exo Afficher la liste des différents services dans une ul en mettant un service par li
-                    echo "<h3>Exercice : afficher la liste des différents services dans une ul en mettant un service par li </h3>";
-                    $requete = $pdoENT->query(" SELECT DISTINCT service FROM employes ");
-                    $nbr_services = $requete->rowCount();
-                    echo "<p class=\"bg-dark text-white w-50\">Il y a " .$nbr_services. " de services différents dans la base de données.</p>";
-                    echo "<ul class=\"border border-warning w-50\">";
-                    while ( $ligne2 = $requete->fetch(PDO::FETCH_ASSOC)){
-                        echo "<li>".$ligne2['service'].'</li>';
-                    }
-                    echo "</ul>";
-Nouveau
 
-Audrey Saulnier Lamboy  21 h 10
 <?php require_once '../inc/functions.php'; ?> 
 <!doctype html>
 <html lang="fr">
@@ -122,6 +110,18 @@ Audrey Saulnier Lamboy  21 h 10
                     echo '<option value=\"$indice\">'.$indice2.'</option>';
                 }
                 echo '</select></form>';
+
+                // exo Afficher la liste des différents services dans une ul en mettant un service par li
+                echo "<h3>Exercice : afficher la liste des différents services dans une ul en mettant un service par li </h3>";
+                $requete = $pdoENT->query(" SELECT DISTINCT service FROM employes ");
+                $nbr_services = $requete->rowCount();
+                echo "<p class=\"bg-dark text-white w-50\">Il y a " .$nbr_services. " de services différents dans la base de données.</p>";
+                echo "<ul class=\"border border-warning w-50\>";
+                while ( $ligne2 = $requete->fetch(PDO::FETCH_ASSOC)){
+                    echo "<li>".$ligne2['service'].'</li>';
+                }
+                echo "</ul>";
+                
                 ?>
             </div>
             <!-- fin col -->

@@ -15,10 +15,6 @@
     <!-- navigation en include -->
   <?php require '../inc/nav.php';?>
 
-    
-
-    
-
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">COURS PHP 7 - La méthode GET</h1>

@@ -10,12 +10,13 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    00-pages
+                    00-exos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../00-pages/01_pages.php" target="_blank">01_pages</a>
-                            <a class="dropdown-item" href="../00-pages/02_pages.php" target="_blank">02_pages</a>
-                            <a class="dropdown-item" href="../00-pages/03_pages.php" target="_blank">03_pages</a>
+                            <a class="dropdown-item" href="../00-exos/01_exos.php" target="_blank">01_exos</a>
+                            <a class="dropdown-item" href="00-exos/02_exos_tableau.php" target="_blank">02_exos_tableau</a>
+                            <a class="dropdown-item" href="../00-exos/03_exos_form.php" target="_blank">03_exos_form</a>
+                            <a class="dropdown-item" href="../00-exos/03_pages.php" target="_blank">03_form_traitement</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -24,7 +25,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../01-intro/info.php" target="_blank">Info</a>
-                            <a class="dropdown-item" href="../01-intro/introduction.php">Introduction</a>
+                            <a class="dropdown-item" href="../01-intro/introduction.php">introduction</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
