@@ -21,7 +21,7 @@
 
         // 1->prepare
         // 2->execute
-        $resultat = $pdoDIA->prepare(" INSERT INTO commentaire (pseudo, date_enregistrement, message) VALUES (:pseudo, NOW(), :message)"); 
+        $resultat = $pdoDIA->prepare("INSERT INTO commentaire (pseudo, date_enregistrement, message) VALUES (:pseudo, NOW(), :message)"); 
 
         $resultat->execute(array(
             ':pseudo' => $_POST['pseudo'],
@@ -45,7 +45,7 @@
     </head>
         <body>
             <!-- navigation en include  -->
-    <?php require '../inc/nav.php';?>
+            <?php require '../inc/nav.php';?>
 
             <!-- Début jumbotron -->
             <div class="jumbotron container">

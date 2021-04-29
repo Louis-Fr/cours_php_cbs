@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h2>$_GET[]</h2>
-                    <p>Il s'agit d'une superglobale et comme toutes les supergloblaes, c'est un tableau</p>
+                    <p>C'est une superglobale et comme toutes les superglobales, c'est un tableau.</p>
                     <p>Superglobale signifie que cette variable est disponible partout dans le script, y compris au sein des fonctions.</p>
                     <p>Les informations transitent dans l'url selon la syntaxe suivante <code>mapage.php?indice1=valeur1&indiceN=valeurN</code></p>
                     <p>Et enfin quand on récupère les données, $GET[] se remplit selon le schéma suivant : <code>

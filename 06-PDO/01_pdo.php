@@ -110,7 +110,7 @@
                             // jevardump($requete);
 
                             $ligne = $requete->fetch( PDO::FETCH_ASSOC );
-                            //3- avec cette méthode fetch() on transforme l'objet $requete 
+                            //3- avec cette méthode fetch() on transforme l'objet $requete en tableau 
                             //4- fetch(), avec le paramètre PDO::FETCH_ASSOC permet de transfomer l'objet $requete en un array associatif appeler ici $ligne : on y trouve en indice le nom des champs de la requête SQL
                             // jevardump($ligne);
 
@@ -123,7 +123,7 @@
                             // correction Patrick
                             $requete = $pdoENT->query ("SELECT * FROM employes WHERE id_employes= 417");
                             $ligne = $requete->fetch();
-                            echo "<p> Nom :" .$ligne['nom']. "Prenom "
+                            echo "<p> Nom :" .$ligne['nom']. "Prenom "  
                             
                         ?>
 
@@ -303,15 +303,15 @@
 
                     <div class="col-sm-12">
                         <h2>05 - Requête préparées avec prepare()</h2>
-                        <p>Les requêtes préparées sont preconisées si vous executez plusieur fois la même requête, ainsi vous eviterez au SGBD : système de gestion de base de donnée de répeter toutes les phrases, analyses, interprétation, éxecution, ect... > On gagne en performance.</p>
+                        <p>Les requêtes préparées sont preconisées si vous executez plusieurs fois la même requête, ainsi vous eviterez au SGBD : système de gestion de base de donnée de répeter toutes les phrases, analyses, interprétation, éxecution, ect... > On gagne en performance.</p>
                         <p>Les requêtes préparées sont utiles pour nettoyer les données et se prémunir des injections de type SQL(tentative de piratage) cf. 09-securite</p>
 
                         <?php
                             // une requête préparée se réalise en 3 étapes
-                            $nom = 'Grand';//ici j'ai l'info que je cherche dans une variable je cherche un résultat ex. je cherche "Grand"
+                            $nom = 'Grand'; // Linfo recherché dans une variable ici "Grand"
 
                             // 1/ on prépare la requête
-                            $resultat = $pdoENT->prepare(" SELECT * FROM employes WHERE nom = :nom "); // a/ prepare permet de préparer la requête sans l'exécuter b/:nom est un marqueur qui est vide (comme une boîte vide) et qui attend une valeur c/ $resultat est pour le moment est pour le moment un objet PDOstatement
+                            $resultat = $pdoENT->prepare(" SELECT * FROM employes WHERE nom = :nom "); // a/ prepare permet de préparer la requête sans l'exécuter b/:nom est un marqueur qui est vide (comme une boîte vide) et qui attend une valeur c/ $resultat est pour le moment un objet PDOstatement
 
                             // 2/ on lie le marqueur 
                             $resultat->bindParam( ':nom', $nom );// bindParam permet de lier la marqueur à la variable :nom à une variable $nom on lie les paramètres
@@ -326,7 +326,7 @@
                             echo "<hr>";
 
 							// Requête préparées sans bindParam
-							$resultat = $pdoENT->prepare(" SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom  "); // préparation de la requête
+							$resultat = $pdoENT->prepare("SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom"); // préparation de la requête
 							$resultat->execute(array(
 								':nom' => 'Thoyer',
 								':prenom' => 'Amandine' // on peut se passer de bindParam
@@ -335,7 +335,7 @@
 							$employe = $resultat->fetch(PDO::FETCH_ASSOC);
 							jevardump($employe);
 
-							echo $employe['prenom']. " ".$employe['nom']. "est au service" .$employe['service']; // on affiche les infos
+							echo $employe['prenom']. " ".$employe['nom']. " est au service " .$employe['service']; // on affiche les infos
                            
 
                         ?>

@@ -136,7 +136,7 @@
                                    require_once 
                                     </td>
                                    <td>
-                                    Contrairement aux deux précédentes, ces fonctions ne sont pas exécutées plusieurs fois, même si elles figurent dans une boucle ou si elles ont déjà été exécutées une fois le code qui précède.
+                                    Contrairement aux deux précédentes, ces fonctions ne sont exécutées qu'une seule fois, même si elles figurent dans une boucle ou si elles ont déjà été exécutées une fois le code qui précède.
                                    </td>
                                 </tr>
                             </tbody>

@@ -6,6 +6,8 @@
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
         ));
+
+        var_dump($pdoIMO);
 ?> 
 <!-- La connexion à la BDD se fait toujours avant le doctype !!! -->
 
@@ -31,6 +33,8 @@
         <!-- PHP -->
         <?php     
 
+        // die('stop le script');
+
         // REQUETE SQL / A tester dans PHPmyAdmin
         $requete = $pdoIMO->query ("SELECT * FROM agence");
         // Le résultat de la requete dans un tableau avec une boucle while
@@ -43,7 +47,7 @@
 
         foreach ($ligne as $indice => $value) {
             echo "<p>".$indice['nom']."</p>";
-        }
+        };
         
 
          

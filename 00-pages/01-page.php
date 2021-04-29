@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php // on ouvre un passage php
+<?php 
+    // on ouvre un passage php
     // déclaration d'une variable PHP avec $
     $variable1 = "PHP 7 (qui est dans une variable)";
 ?>
@@ -28,7 +29,7 @@
     ?>
     <hr>
 
-    <?= "<blockquote>$variable2, variable2, on t'entend le $variable2<blockquote>"; ?>
+    <?php "<blockquote>$variable2, variable2, on t'entend le $variable2<blockquote>"; ?>
 
     <?php print_r($GLOBALS); ?>
     <hr>

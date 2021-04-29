@@ -95,7 +95,7 @@
                     $tab[] = "coucou"; // il mettra l'indice 36 : avantage d'ajouter un élément à la fin d'un tableau sans connaître la valeur du premier indice
                     var_dump($tab);
                     echo "<hr>";
-                    echo "Nombre d'éléments du tableau : " .count($tab); // Ils ne sont donc pas compté
+                    echo "Nombre d'éléments du tableau : " .count($tab); // count fonction pour compter
                     echo "<hr><p>Le langage préfére de l'open source est $tab[2] <br>";
                     echo "Utilisez $tab[35]</p>";
                     
@@ -103,6 +103,7 @@
                     // jeprintr($tab);
 
                 ?>
+            </div>
 
                 <div class="col-sm-12">
                   <h2>Les tableaux associatifs</h2>
@@ -125,7 +126,7 @@
                     // pour afficher une valeur de notre tableau associatif en le cherchant par son indice
                     echo '<p>La première couleur du tableau est le ' .$couleurs['b']. '</p>'; // quand un tableau associatif est dans des simples quotes il prend des quotes autour de son indice
 
-                    echo "<p> La première couleur du tableau est $couleurs[b]</p>"; // dans des guillemets il y a une exception, l'indice ne prends plus de quotes ... VOIR
+                    echo "<p> La première couleur du tableau est $couleurs[b]</p>"; // dans des guillemets il y a une exception, l'indice ne prends plus de quotes !
 
                     // Compter le nombre d'élements du tableau
                     // echo "<p>Nombre d'élements dans le tableau \$couleurs\ : " count ($couleurs). "</p>"
@@ -137,8 +138,8 @@
                     echo "<ul class=\"w=50 bg-warning\">";
                     // on parcours le tableau $tableau1 par ses valeurs, la variable $acteur prend les valeurs successivement à chaque tour de boucle, le mot-clef "as" est obligatoire
 
-                    foreach ($couleurs as $acteurs) { // récupère indice et valeur
-                      echo "<li>$acteurs</li>";
+                    foreach ($couleurs as $acteurs => $value) { // récupère indice et valeur
+                      echo "<li>$acteurs => $value </li>";
                     }  
                       echo "</ul>";
 
@@ -156,7 +157,7 @@
 
 
                       echo "<ul>";
-                        foreach ($tableau1 as $indice => $acteur) { // la boucle parcourt cette fois-ci les indices et les valeurs : d'abord les indices dans une variable $indice => puis les valeurs correspondant à chaque indicde dans une variable $acteur
+                        foreach ($tableau1 as $indice => $acteur) { // la boucle parcourt cette fois-ci les indices et les valeurs : d'abord les indices dans une variable $indice => puis les valeurs correspondant à chaque indice dans une variable $acteur
                           echo "<li> pour $indice, la valeur est $acteur</li>";
                         }
                       echo "</ul>";
@@ -182,8 +183,8 @@
                       // - 2 avec une boucle foreach vous affichez les valeurs
                       
                       echo "<ul>";
-                      foreach ($contacts as $value) {
-                      echo "<li>$value</li>";
+                      foreach ($contacts as $index => $value2) {
+                      echo "<li>$index = $value2</li>";
                       }
                       echo "</ul>";
 
@@ -240,7 +241,7 @@
                   
 
                   </div>
-              </div>
+              
 
             <div class="col-sm-12">
               <h2>Les tableaux multi-dimensionnels</h2>
@@ -285,17 +286,13 @@
                       }
                       echo "</p>";
 
-                     
-                      foreach ($tableau_multi as $indice => $prenom) {
-                        echo $tableau_multi[$indice]['prenom'];
-                      }
-                    
                 ?>
 
 
             </div> <!-- fin col -->
-
-        </div>
+          </div><!-- fin row -->
+        
+    </div>    
     </main> 
 
     <!-- Optional JavaScript; choose one of the two! -->

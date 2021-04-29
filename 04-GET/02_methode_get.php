@@ -1,4 +1,7 @@
-<?php include '../inc/functions.php'; ?>
+<?php 
+  include '../inc/functions.php';
+  include '../inc/nav.php';
+ ?>
 
 <!doctype html>
 <html lang="fr">
@@ -13,9 +16,6 @@
     <title>COURS PHP 7</title>
   </head>
   <body>
-  
-    <!-- navigation en include -->
-  <?php require '../inc/nav.php';?>
 
     <!-- Jumbotron -->
     <div class="jumbotron-container">
@@ -29,7 +29,6 @@
     
     <!-- contenu principal -->
     <main class="container bg-white">
-        
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                    <?php
@@ -43,14 +42,6 @@
                     }
 
                     // echo $_GET["article"]. "-" .$_GET['couleur']. "-" .$_GET['prix'];
-
-
-                    foreach ($variable as $keissy => $value) {
-                      # code...
-                    }
-
-
-
                     
                    ?>
                 </div> <!-- fin col -->

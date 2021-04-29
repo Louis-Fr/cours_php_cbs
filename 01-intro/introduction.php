@@ -135,7 +135,7 @@
     
     </main>
 
-    <?php require '../inc/footer.inc.php'; ?>
+    <?php include '../inc/footer.inc.php'; ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

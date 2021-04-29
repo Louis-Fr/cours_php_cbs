@@ -28,10 +28,10 @@
     <!-- contenu principal -->
     <main class="container bg-white">
         <div class="row">
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12">
                 <h2>if</h2>
                 <p>L'instruction <code>if</code> est la plus simple et la plus utilisée des instructions conditionelles.
-                Présente dans tous les langages de programmation, elle est essentielle en ce qu'elle permet d'orienter l'éxecution du script en fonction de la valeur booléenne d'une valeur booléenne d'une expression.</p>
+                Présente dans tous les langages de programmation, elle est essentielle en ce qu'elle permet d'orienter l'éxecution du script en fonction de la valeur booléenne d'une expression.</p>
 
                 <?php
                 $a = 100;
@@ -45,7 +45,7 @@
                 ?>
             </d iv> <!-- fin col -->
 
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12">
                 <h2>if ... else</h2>
                 <p>L'instruction <code>if...else</code>permet de traiter le cas ou l'expression conditionelle est TRUE et en même tempsd'écrire un traitement de rechange quand elle est évaluée à FALSE, ce que ne nous permet pas une instruction if seule. L'instruction ou le bloc qui suit <code>else</code>qest alors le seul à être est éxécuté. L'exécution continue ensuite normalement après le bloc <code>else</code>.</p>
             </div> <!-- fin col -->
@@ -74,7 +74,7 @@
 
               ?>
 
-              <div class="col-sm-12 md-4">
+              <div class="col-sm-12">
               <h2>if ... else if ... else</h2>
                 <p>Le bloc qui suit les insructions if ou else peut contenir toutes sortes d'instructions, y compris d'autres instructions <code>if... else</code></p>
                 <p>Il existe une autre maière d'ècrire un if...else; la condition ternaire</p>
@@ -96,20 +96,25 @@
               <!-- fin col -->
               
 
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12">
               <h2>if ... else ... if ... else</h2>
               <?php 
-                echo "<p class=\"alert alert-success w-75 mx-auto text-center\">";
 
-              if ($d == 8) {
-                ..
-                echo "Réponse 1 : \$d est égal à 8";
-              } else if ($d != 10) {
-                echo "Réponse 2 : \$d est différent de 10";
-              } else {
-                echo "Réponse 3 : les deux conditions sont fausses";
-              }
+                echo "<p>";
+                $d = 8;
+
+                if ($d == 8) {
+                echo "Réponse 1 : $d est égal à 8";
+                
+                }  else if ($d != 10) {  
+                echo "Réponse 2 : $d est différent de 10";
+
+                } else {
+                  echo "Réponse 3 : les deux conditions sont fausses";
+                }
+
                 echo"</p>";
+              
               ?>
 
               </div>
@@ -119,7 +124,7 @@
               <!-- fin row -->
 
               <div class="row">
-                <div class="col-sm12 col-md-6">
+                <div class="col-sm12">
                   <h2>Switch ... case</h2>
                   <p>Switch permet de comparer à une multitude de valeur comme l'instruction if... else if ... else</p>
 
@@ -156,7 +161,7 @@
 
 
                 </div> <!-- fin col -->
-                <div class="col-sm12 col-md-6">
+                <div class="col-sm-12">
 
                 </div>
               </div> <!-- fin row -->

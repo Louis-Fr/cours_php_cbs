@@ -25,7 +25,63 @@
     <h1>Exos</h1>
 
     <?php
+
+    echo "<p>Test QCM WF3</p>";
+    $comptage = 0;
+    $donnees = array();
+    $donnees[] = 'John';
+    $donnees[] = 'Peter';
+    $donnees[] = 'Jack';
+    $donnees[1] = 'Matthew';
+    $comptage += count($donnees);
+    echo $comptage;
+
+    echo "<hr>";
+
+    $a = 'Hello world';
+    $b = true;
+    
+    $a = 40;
+    $b = $a + 2; 
+    var_dump ($b);
+    
+    echo "<hr>";
+
+    $tab = array();
+    $tab[0] = array ('a', 'b', 'c');
+    $tab[1] = array ('d', 'z', 'x');
+    $tab[2] = array ('e', 'f', 'g');
+    echo $tab[2][1];
+
+    echo "<hr>";
+
+    time();
+    echo (time());
+
+
+    echo "<hr>";
+
+    /* function calculSoldes($prix, $reduc = 20)
+    {
+    $prix_solde = $prix * ( (100-$reduc) / 100 );
+    return $prix_solde;
+    }
+
+    echo calculSoldes(100);
+    echo calculSoldes(100,25);
+    echo calculSolde(100,50); */
+
+    echo "<hr>";
+
+    $rayon['fruits'] = array('banane','orange','cerise');
+    echo $rayon['fruits'][2];
      
+    $test = '';
+    if (defined($test)) {
+        echo "<p>La variable est définie</p>";
+    } else {
+        echo "<p>La variable n'est pas définie</p>";
+    }
 
     // Cette fonction permet d'analyser dans le navigateur le contenu et le type d'une variable 
     var_dump($chaine);
@@ -218,7 +274,7 @@
     ?>
     </main>
 
-    <?php require '../inc/footer.inc.php'; ?>
+    <?php include './inc/footer.inc.php'; ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

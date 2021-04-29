@@ -1,4 +1,4 @@
-<?php require_once 'inc/init.php'; ?>
+<?php require_once '10-boutique/inc/init.php'; ?>
 
 <!doctype html>
 <html lang="fr">

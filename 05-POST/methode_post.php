@@ -19,7 +19,7 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">COURS PHP 7 - La méthode GET</h1>
+            <h1 class="display-4">COURS PHP 7 - La méthode POST</h1>
             <p class="lead">Réceptionne les données d'un formulaire</p>
             <hr>
             <button>
@@ -39,8 +39,8 @@
                 <ul>
                     <li>Un formulaire doit toujours être dans une balise pour fonctionner </li>
                     <li>L'attribut "method" indique comment les données vont circuler vers le PHP.</li>
-                    <li>L'attribut action indique l'URL de destination des données, si l'attribut action est vide les donnés vont vers le même script ou sur la même page</li>
-                    <li>Enuite les "names" doivent être renseigné car ils constituent les indices de $_POST qui réceptionne les données.</li>
+                    <li>L'attribut action indique l'URL de destination des données, si l'attribut action est vide les donnés vont vers le même script ou sur la même page.</li>
+                    <li>Enuite les "names" des input doivent être renseigné car ils constituent les indices de $_POST qui réceptionne les données.</li>
                 </ul>
 
                 <form method="POST" action="" class="p-2"> <!-- début formulaire -->
@@ -79,20 +79,45 @@
                 </div>
 
                 <?php 
-                    if (!empty($_POST)){ // Si $_POST n'est pas vide c'est qu'il est rempli et donc que le formulaire a été envoyé, notez qu'en l'état on peut l'envoyer avec des champs vide, les valeurs de $_POST étant alors des strings vides. En effet on peut avoir des informations non obligatoires dans un formulaire et les inputs ne seront pas remplis
+                    // if (!empty($_POST)){ // Si $_POST n'est pas vide c'est qu'il est rempli et donc que le formulaire a été envoyé, notez qu'en l'état on peut l'envoyer avec des champs vide, les valeurs de $_POST étant alors des strings vides. En effet on peut avoir des informations non obligatoires dans un formulaire et les inputs ne seront pas remplis.
                     // jevardump($_POST);
-                    echo "<p>Prénom : <strong>" .$_POST['prenom']. "</strong><br>";
-                    echo "Commentaire : <strong>" .$_POST['commentaire']. "</strong><blockquote>";
-                    }
+                    // echo "<p>Prénom : <strong>" .$_POST['prenom']. "</strong><br>";
+                    // echo "Commentaire : <strong>" .$_POST['commentaire']. "</strong><blockquote>";
+                    //}
                 ?> 
 
+                <!-- GET on passe dans l'URL, POST on envoie -->
 
-<!-- $_POST est une super globale, qui permet de récupérer les données saisies dans un formulaire 
-$_POST est donc un array, il est disponible dans tous les contextes du script-->
+                <form method="GET" action="" class="p-2"> <!-- début formulaire -->
+                <!-- action vide renvoie vers la même page -->
+                    <div class="form-group">
+                        <label for="prenom1">Prenom</label>
+                        <input type="text" class="form-control" id="prenom1" name="prenom1">
+                    </div>
 
-<!-- les indices sont les names du formulaire -->
+                    <div class="form-group">
+                        <label for="nom1">Nom de famille</label>
+                        <input type="text" class="form-control" id="nom1" name="nom1">
+                    </div>
 
-<!-- GET on passe dans l'URL, POST on envoie -->
+                    <div class="form-group">
+                        <label for="commentaire">Votre Commentaire</label>
+                        <textarea id="commentaire" rows="2" name="commentaire"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-small btn-primary">Envoyer</button>
+
+                </form> <!-- fin  formulaire -->
+
+                <?php 
+                    if (!empty($_GET)) {
+                        echo "<p>Les valeurs" .$_GET['prenom1']. ' ' .$_GET['nom1']. "</p>";
+                    } else {
+                        echo "<p>Aucune donnée trouvée</p>";
+                    }
+                    
+
+                ?>
 
                     
                 </div> <!-- fin col -->
@@ -103,7 +128,7 @@ $_POST est donc un array, il est disponible dans tous les contextes du script-->
     
     </main> <!-- fin main-->
 
-    <?php require '../inc/footer.inc.php'; ?>
+    <?php include '../inc/footer.inc.php'; ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

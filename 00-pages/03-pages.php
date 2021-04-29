@@ -9,7 +9,7 @@
 
     // déclaration d'une constante avec define
     define("sitegravillon", "http://www.gravillon.fr",FALSE);
-    echo "l'url de Gravillon est : ".sitegravillon."<br>";
+    echo "l'url de Gravillon est : " .sitegravillon. "<br>";
     echo "visitez le site de <a href=\" ".sitegravillon." \" target=\"_blank\">Gravillon</a>";
     // A REVOIR CARACTERE ECHAPPEMENT DANS PHP
    
